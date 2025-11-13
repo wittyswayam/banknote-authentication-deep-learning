@@ -1,31 +1,57 @@
-# Banknote Authentication Using Deep Learning ANN
+# 💵 Banknote Authentication Using Deep Learning ANN 🤖
 
-## Project Overview
-This project develops an Artificial Neural Network (ANN) model to automatically classify banknotes as genuine or forged. Using features extracted from wavelet-transformed grayscale images of banknotes, the model improves the accuracy of authentication in financial and security applications.
+## 🚀 Project Overview
+This project uses an Artificial Neural Network (ANN) to classify banknotes as **genuine** or **forged** based on features extracted from wavelet-transformed images. It automates banknote authentication, improving security in financial transactions and counterfeit detection.
 
-## Dataset Description
-The dataset consists of images obtained via industrial cameras used for print inspection of genuine and counterfeit banknotes. Each image, with a resolution of approximately 660 dpi and size 400x400 pixels, undergoes Wavelet Transform for feature extraction. Extracted features include:
-- Variance of Wavelet Transformed Image (VWTI)
-- Skewness of Wavelet Transformed Image (SWTI)
-- Curtosis of Wavelet Transformed Image (CWTI)
-- Entropy of Image (EI)
+***
 
-The dataset is labeled with a binary class: 1 for genuine banknotes and 0 for forged banknotes.
+## 📊 Dataset Description
+The dataset consists of grayscale images (400x400 px, ~660 dpi) from an industrial print inspection camera. Features extracted using Wavelet Transform include:
 
-## Project Structure & Workflow
-- **Data Loading & Preprocessing:** Import and prepare the dataset for model training, including normalization and handling any data quality issues.
-- **Feature Exploration:** Analyze feature distributions and correlations to understand dataset characteristics.
-- **Model Building:** Create an ANN using TensorFlow/Keras with input layers matching feature dimensions, one or more hidden layers with ReLU activations, and a sigmoid output layer for binary classification.
-- **Training & Evaluation:** Train the model on the training set, validate on a held-out test set, and evaluate using accuracy, confusion matrix, and other metrics.
-- **Results Visualization:** Graph performance metrics and feature importance insights to interpret the model behavior.
-- **Potential Extensions:** Suggest CNN models for raw image input, integration of additional image processing techniques, or deployment as a real-time authentication tool.
+| Feature | Description                   |
+|---------|-------------------------------|
+| VWTI    | Variance of Wavelet Transformed Image       |
+| SWTI    | Skewness of Wavelet Transformed Image       |
+| CWTI    | Curtosis of Wavelet Transformed Image       |
+| EI      | Entropy of Image                           |
 
-## Usage
-Run through the notebook to preprocess data, train and evaluate the ANN model, and explore results. Modify hyperparameters or architecture for experimentation.
+The labels indicate:
 
-## Results
-The model achieves robust classification accuracy distinguishing genuine and counterfeit banknotes, showing potential for deployment in automated security checks and banking quality assurance processes.
+- 🟢 Genuine banknotes (Class 1)  
+- 🔴 Forged banknotes (Class 0)
 
-[7](https://www.neuraldesigner.com/blog/banknote-authentication/)
-[8](https://archive.ics.uci.edu/ml/datasets/banknote+authentication)
-[9](https://cerv.aut.ac.nz/wp-content/uploads/2021/12/Ma-Yan2021_Article_BanknoteSerialNumberRecognitio.pdf)
+***
+
+## 🔧 Project Workflow
+
+### 1. Data Loading & Preprocessing  
+- Import dataset and clean data  
+- Normalize features for ANN input
+
+### 2. Exploratory Data Analysis  
+- Visualize feature distributions  
+- Plot correlations  
+
+<img src="images/feature_distribution.png" alt="Feature Distribution" width="600"/>
+
+### 3. ANN Model Building  
+- Fully connected neural network using TensorFlow/Keras  
+- Input layer corresponds to 4 extracted features  
+- Hidden layers with ReLU activation  
+- Output layer with sigmoid activation for binary classification  
+
+### 4. Model Training & Evaluation  
+- Split data into training and test sets  
+- Train model with suitable epochs and batch size  
+- Evaluate using accuracy, confusion matrix, precision, recall  
+
+<img src="images/confusion_matrix.png" alt="Confusion Matrix" width="400"/>  
+
+***
+
+## 🎯 Usage
+- Detailed step-by-step workflow in the Jupyter notebook  
+- Modify ANN architecture or hyperparameters to experiment  
+- Visualize results for interpretability  
+
+***
